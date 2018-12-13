@@ -1,0 +1,5 @@
+/help 
+/diceroll
+/randomnumber
+/stop
+/8ball
