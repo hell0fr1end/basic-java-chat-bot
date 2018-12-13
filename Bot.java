@@ -32,21 +32,22 @@ public class Bot
          command = input.next();
         
          //stop command
-         if(command.equals("/stop"))
+         if(command.equals(prefix+"stop"))
          {
             looper = false;
          }
         
          //help command
-         if(command.equals("/help"))
+         if(command.equals(prefix+"help"))
          {
             System.out.println("All commands for "+botName);
             System.out.println("");
-            System.out.println("/help: displays this message");
-            System.out.println("/diceroll: generates a random number from 1-6");
-            System.out.println("/randomnumber: generates a random number between two given numbers");
-            System.out.println("/stop: stops the bot");
-            System.out.println("/8ball: starts the 8 ball feature");
+            System.out.println(prefix+"help: displays this message");
+            System.out.println(prefix+"diceroll: generates a random number from 1-6");
+            System.out.println(prefix+"randomnumber: generates a random number between two given numbers");
+            System.out.println(prefix+"stop: stops the bot");
+            System.out.println(prefix+"8ball: starts the 8 ball feature");
+            System.out.println(prefix+"prefix: Allows you to custom set the command prefix");
             
             //spacing
             System.out.println("");
@@ -55,14 +56,14 @@ public class Bot
          }
         
          //diceroll command
-         if(command.equals("/diceroll"))
+         if(command.equals(prefix+"diceroll"))
          {
            diceroll = (int)rand.nextInt(6)+1;
            System.out.println(diceroll);
            System.out.println("");
          }
          //randomnumber command
-         if(command.equals("/randomnumber"))
+         if(command.equals(prefix+"randomnumber"))
          {
             System.out.print("Enter first number: ");
             randLow = input.nextInt();
@@ -76,7 +77,7 @@ public class Bot
          }
          
          //8ball command
-         if(command.equals("/8ball"))
+         if(command.equals(prefix+"8ball"))
          {
             System.out.print("Ask me a question: ");
             ballQuestion = input.next();
@@ -131,7 +132,13 @@ public class Bot
             System.out.println("");
          }
          
-         
+         //prefix command
+         if(command.equals(prefix+"prefix"))
+         {
+            System.out.print("Type new prefix: ");
+            prefix = input.next();
+            System.out.println("Prefix has been changed to '"+prefix+"' i.e. "+prefix+"help");
+         }
        }while(looper == true);
        System.out.println("Thank you for using "+botName+"!");   
    

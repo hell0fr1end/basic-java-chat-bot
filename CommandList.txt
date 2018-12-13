@@ -3,3 +3,4 @@
 /randomnumber
 /stop
 /8ball
+/prefix
